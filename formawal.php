@@ -1,50 +1,49 @@
 <?php
-<h1> <th><CENTER>QUALITY TIME </CENTER> </th></h1>
-<H2> <TH> SILAHKAN PILIH </TH></H2>
+<html>
+<head>
+	<title> TA 4 webdas</title>	
+</head>
+<body>
+	<h1>SILAHKAN LOGIN TERLEBIH DAHULU</h1>
+	
+	<form action="#" method="post">		
+		<table>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="login" value="Log In"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
 
-<form action="" method="post">
-<input type="checkbox" name="genrefilm[]" value="horor">HOROR<br/>
-<input type="checkbox" name="genrefilm[]" value="action">ACTION<br/>
-<input type="checkbox" name="genrefilm[]" value="anime">ANIME<br/>
-<input type="checkbox" name="genrefilm[]" value="thriller">THRILLER<br/>
-<input type="checkbox" name="genrefilm[]" value="animasi">ANIMASI<br/></br>
- <input type="reset" value="Delete Hobi" name="Delete"> <br> <br>
-<hr style="border-color: green">
+<?php
 
-<input type="checkbox" name="wisata[]" value="bali">BALI<br/>
-<input type="checkbox" name="wisata[]" value="rajaampat">RAJA AMPAT<br/>
-<input type="checkbox" name="wisata[]" value="pulauderawan">PULAU DERAWAN<br/>
-<input type="checkbox" name="wisata[]" value="bangkabelitung">BANGKA BELITUNG<br/>
-<input type="checkbox" name="wisata[]" value="labuanbajo">LABUAN BAJO<br/></br>
- <input type="reset" value="Delete wisata" name="Delete"> <br> <br>
-<hr style="border-color: green">
+	if (isset($_POST['login'])) {
+		$username=$_POST['username'];
+		$password=$_POST['password'];
 
-    Select untuk upload image:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit"> <br><br>
-    <hr style="border-color: green"><hr style="border-color: green">
-    <input type="submit" name="kirim" value="kirim">
-</form>
-
-
-
-<?php 
-if (isset($_POST['kirim'])){
-	$data=$_POST["genrefilm"];
-
-		foreach ($data as $nilai) {
-			echo $nilai."<br/>"; 
-		}	
-}
-
-if (isset($_POST['kirim'])){
-	$data=$_POST["wisata"];
-
-		foreach ($data as $nilai) {
-			echo $nilai."<br/>";
-		}	
-}
+		if ($username=="admin"&&$password="admin") {
+			echo " LOGIN BERHASIL";
 ?>
 
+	<a href="proses.php" > LANJUTKAN  </a>
+	<?php  
+
+		}else{
+			echo "LOGIN GAGAL";
+		}
+		
+	}
+
+?>
 
 ?>
